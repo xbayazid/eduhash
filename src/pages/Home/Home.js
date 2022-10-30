@@ -1,11 +1,18 @@
-import React from "react";
-import { Card, Col, Container, Row } from "react-bootstrap";
+import React, { useEffect, useState } from "react";
+import { Card, Col, Container, Image, Row } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import HeaderImg from "../../header-img.png";
 import CardImgThree from "../../remote.webp";
 import supportImg from '../../support.webp';
 import "./Home.css";
 
 const Home = () => {
+    const [categories, setCategories] = useState([]);
+    useEffect(()=>{
+        fetch('http://localhost:5000/course-categories')
+        .then(res => res.json())
+        .then(data => setCategories(data))
+    })
   return (
     <div>
       <div>
@@ -129,6 +136,18 @@ const Home = () => {
                     <p className="support-description support-text mt-3"><span className="text-dark">Zoom</span> is integrated into EduHash to help schools, organizations to enhance their online programs. Learners can access to online high-quality video sessions through desktop and mobile. You can simply connect with <span className="text-dark">Zoom Meetings directly</span> from your LMS.</p>
                 </Col>
             </Row>
+        </Container>
+      </div>
+      <div className="my-5 text-center subscription">
+        <Container>
+            <h1>Subscribe Now Forget 20% Discount Every Courses</h1>
+            <p>Why are you waiting? Get connected with us & get special offers</p>
+            <div className="">
+                <div className="">
+                    <input className="px-5 py-3" type="email" name="email" id="" placeholder="Your Email" />
+                    <button className="ms-4 py-3 px-5 border-0 bg-dark text-light">Subscribe</button>
+                </div>
+            </div>
         </Container>
       </div>
     </div>

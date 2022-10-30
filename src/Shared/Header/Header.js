@@ -6,16 +6,16 @@ import './Header.css';
 const Header = () => {
     return (
         <div className='py-2'>
-            <Navbar collapseOnSelect expand="lg" bg="light" variant="">
+            <Navbar className='fixed-top' collapseOnSelect expand="lg" bg="light" variant="">
       <Container>
         <Navbar.Brand className='nav-links'><Link><h3><span className='fw-bold text-success'>Edu</span>Hash</h3></Link></Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="m-auto text-dark nav-links fs-5 fw-semibold">
-            <Nav.Link to="/">Home</Nav.Link>
-            <Nav.Link to="" >Courses</Nav.Link>
-            <Nav.Link to="" >Blog</Nav.Link>
-            <Nav.Link to="" >FAQ</Nav.Link>
+            <Link className='me-5' to="/">Home</Link>
+            <Link className='me-5' to="/course/:id" >Courses</Link>
+            <Link className='me-5' to="" >Blog</Link>
+            <Link className='me-5' to="/faq" >FAQ</Link>
           </Nav>
           <Nav>
             <Nav.Link href="#deets">More deets</Nav.Link>
