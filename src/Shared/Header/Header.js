@@ -5,7 +5,7 @@ import './Header.css';
 
 const Header = () => {
     return (
-        <div>
+        <div className='py-2'>
             <Navbar collapseOnSelect expand="lg" bg="light" variant="">
       <Container>
         <Navbar.Brand className='nav-links'><Link><h3><span className='fw-bold text-success'>Edu</span>Hash</h3></Link></Navbar.Brand>
